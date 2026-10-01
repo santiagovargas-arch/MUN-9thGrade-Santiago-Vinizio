@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Spaces | Golden Valley School</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for simple icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js for the dashboard -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#12519C',   /* Titles */
+                        brandLight: '#27A0DB',  /* Accents */
+                        brandYellow: '#F6C401', /* Highlights */
+                    },
+                    fontFamily: {
+                        sans: ['Arial', 'Helvetica', 'sans-serif'], /* Arial font as requested */
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Base styling to ensure clean white background and default text color */
+        body {
+            background-color: #ffffff;
+            color: #333333;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- 1. Header Section -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center">
+            <a href="#" class="text-brandDark font-bold text-2xl tracking-wide mb-4 md:mb-0">
+                <i class="fa-solid fa-hands-holding-circle text-brandLight mr-2"></i>Safe Spaces
+            </a>
+            <nav class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-gray-600">
+                <a href="#what-is-a-safe-space" class="hover:text-brandLight transition-colors">What is a Safe Space</a>
+                <a href="#about-us" class="hover:text-brandLight transition-colors">About Us</a>
+                <a href="#dashboard" class="hover:text-brandLight transition-colors">Dashboard</a>
+                <a href="#get-help" class="hover:text-brandLight transition-colors">Get Help</a>
+            </nav>
+        </div>
+        <!-- Thin three-color bar under the header -->
+        <div class="flex h-1 w-full">
+            <div class="w-1/3 bg-brandDark"></div>
+            <div class="w-1/3 bg-brandLight"></div>
+            <div class="w-1/3 bg-brandYellow"></div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- 2. Hero Section -->
+        <section id="hero" class="max-w-4xl mx-auto px-6 py-24 text-center md:py-32">
+            <h1 class="text-4xl md:text-5xl font-bold text-brandDark leading-tight mb-8">
+                We are dedicated to dismantling barriers and cultivating an environment where vulnerability is met with compassion.
+            </h1>
+            <p class="text-xl md:text-2xl text-brandLight font-medium mb-12">
+                Statistic: <span class="text-gray-600 font-normal italic">[our statistic]</span>
+            </p>
+            <a href="#get-help" class="inline-block bg-brandLight hover:bg-brandDark text-white font-bold py-4 px-10 rounded-full transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                Get help
+            </a>
+        </section>
+
+        <!-- 3. What is a Safe Space -->
+        <section id="what-is-a-safe-space" class="bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6 py-24">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold text-brandDark mb-6 relative inline-block">
+                        What is a Safe Space?
+                        <span class="absolute bottom-0 left-1/4 w-1/2 h-1 bg-brandYellow rounded-full mt-2 block"></span>
+                    </h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mt-6">
+                        For us, a safe space is a supportive environment where people can gather and freely express themselves without fear of discrimination, harassment, or judgment.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <!-- Item 1 -->
+                    <div class="p-8 bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="text-brandLight text-5xl mb-6">
+                            <i class="fa-solid fa-ban"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brandDark mb-3">Zero tolerance for hostility</h3>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="p-8 bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="text-brandLight text-5xl mb-6">
+                            <i class="fa-solid fa-heart-open"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brandDark mb-3">Authentic, vulnerable sharing</h3>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="p-8 bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="text-brandLight text-5xl mb-6">
+                            <i class="fa-solid fa-ear-listen"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brandDark mb-3">Active, respectful listening</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. About Us -->
+        <section id="about-us" class="max-w-4xl mx-auto px-6 py-24 text-center">
+            <h2 class="text-3xl font-bold text-brandDark mb-8">About Us</h2>
+            <div class="text-brandLight text-4xl mb-6">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <p class="text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
+                We are a group of students of Golden Valley School. We want to help people create safe spaces where they can feel accompanied and safe.
+            </p>
+        </section>
+
+        <!-- 5. Dashboard -->
+        <section id="dashboard" class="bg-gray-50">
+            <div class="max-w-6xl mx-auto px-6 py-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-brandDark mb-4">Dashboard</h2>
+                    <p class="text-gray-500 uppercase tracking-widest text-sm font-bold">Sample Data</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Chart 1: Line Chart -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <h3 class="text-center font-bold text-brandDark mb-4">Interactions Over Time</h3>
+                        <div class="relative h-64 w-full">
+                            <canvas id="lineChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- Chart 2: Column Chart -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <h3 class="text-center font-bold text-brandDark mb-4">Reported Safe Zones</h3>
+                        <div class="relative h-64 w-full">
+                            <canvas id="columnChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Chart 3: Pie Chart -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <h3 class="text-center font-bold text-brandDark mb-4">Support Categories</h3>
+                        <div class="relative h-64 w-full">
+                            <canvas id="pieChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Get Help -->
+        <section id="get-help" class="max-w-4xl mx-auto px-6 py-32 text-center">
+            <div class="inline-block p-4 rounded-full bg-brandYellow/20 mb-6 text-brandYellow text-4xl">
+                <i class="fa-solid fa-life-ring"></i>
+            </div>
+            <h2 class="text-4xl font-bold text-brandDark mb-8">Need Support?</h2>
+            <div class="bg-white border-2 border-brandLight rounded-2xl p-8 md:p-12 shadow-lg relative overflow-hidden">
+                <!-- Small yellow highlight decoration -->
+                <div class="absolute top-0 right-0 w-16 h-16 bg-brandYellow transform translate-x-8 -translate-y-8 rotate-45"></div>
+                
+                <p class="text-xl md:text-2xl text-gray-800 mb-8 font-medium">
+                    If you don't feel safe, talk to the counselor Wellness.
+                </p>
+                <div class="space-y-4 text-lg">
+                    <p class="flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-envelope text-brandLight"></i> 
+                        <span class="font-bold text-gray-600">Email:</span> 
+                        <a href="mailto:wellness@goldenvalley.ed.cr" class="text-brandDark hover:underline font-semibold">wellness@goldenvalley.ed.cr</a>
+                    </p>
+                    <p class="flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-phone text-brandLight"></i> 
+                        <span class="font-bold text-gray-600">Emergency:</span> 
+                        <span class="text-brandDark font-bold text-xl px-2 py-1 bg-gray-100 rounded">911</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. Footer -->
+    <footer class="bg-brandDark text-white py-10 mt-auto">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="font-medium tracking-wide">
+                Golden Valley School, 2026
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chart configuration globals matching the brand colors
+            const brandDark = '#12519C';
+            const brandLight = '#27A0DB';
+            const brandYellow = '#F6C401';
+            const grayColor = '#E5E7EB';
+
+            // Common responsive options
+            const commonOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { family: 'Arial' }
+                        }
+                    }
+                }
+            };
+
+            // 1. Line Chart Setup
+            const ctxLine = document.getElementById('lineChart').getContext('2d');
+            new Chart(ctxLine, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Student Engagements',
+                        data: [12, 19, 25, 22, 30, 35],
+                        borderColor: brandLight,
+                        backgroundColor: 'rgba(39, 160, 219, 0.2)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.3,
+                        pointBackgroundColor: brandDark
+                    }]
+                },
+                options: commonOptions
+            });
+
+            // 2. Column (Bar) Chart Setup
+            const ctxColumn = document.getElementById('columnChart').getContext('2d');
+            new Chart(ctxColumn, {
+                type: 'bar',
+                data: {
+                    labels: ['Library', 'Cafeteria', 'Gym', 'Counseling', 'Courtyard'],
+                    datasets: [{
+                        label: 'Visits',
+                        data: [45, 20, 15, 60, 30],
+                        backgroundColor: brandDark,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    ...commonOptions,
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+
+            // 3. Pie Chart Setup
+            const ctxPie = document.getElementById('pieChart').getContext('2d');
+            new Chart(ctxPie, {
+                type: 'pie',
+                data: {
+                    labels: ['Listening', 'Guidance', 'Mediation'],
+                    datasets: [{
+                        data: [50, 30, 20],
+                        backgroundColor: [
+                            brandDark,
+                            brandLight,
+                            brandYellow
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: commonOptions
+            });
+        });
+    </script>
+</body>
+</html>
